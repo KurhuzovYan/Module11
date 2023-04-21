@@ -1,25 +1,18 @@
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Main {
     public static void main(String[] args) {
 
-        List<String> names = new ArrayList<>();
-        names.add("Kolya");
-        names.add("Katya");
-        names.add("Zhenya");
-        names.add("Oleg");
-        names.add("Anya");
-        names.add("Sergey");
-        names.add("Pavel");
-
         StreamExample se = new StreamExample();
-        System.out.println(names);
-        se.getOddIndexOfNames(names);
-        System.out.println();
-        se.getSortedNamesInUpperCase(names);
+        List<String> list1 = Arrays.asList("Kolya", "Katya", "Zhenya", "Oleg", "Anya", "Sergey", "Pavel");
+        List<String> list2 = Arrays.asList("Pavel", "Mikhail", "Lina", "Alex", "Nika");
 
-
+        se.getOddIndexOfNames(list1);
+        se.getSortedNamesInUpperCase(list2);
+        se.getSortedNumbers(new String[]{"1, 2, 0", "4, 5"});
+        //se.infinityStream(25214903917l, 11, (long) Math.pow(2, 48), 1).forEach(System.out::println);
+        System.out.println(se.zip(list1.stream(), list2.stream()).collect(Collectors.joining(", ")));
     }
 }
