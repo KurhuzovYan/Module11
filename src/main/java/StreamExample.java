@@ -20,9 +20,11 @@ public class StreamExample {
 
     public String getSortedNumbers(String[] num) {
         return Arrays.stream(num)
-                .map(x -> x.replaceAll("\\s+", "").split(","))
-                .flatMap(x -> Arrays.stream(x))
+                .map(n -> n.replaceAll("\s+", "").split(","))
+                .flatMap(Arrays::stream)
+                .mapToInt(Integer::parseInt)
                 .sorted()
+                .mapToObj(String::valueOf)
                 .collect(Collectors.joining(", "));
     }
 

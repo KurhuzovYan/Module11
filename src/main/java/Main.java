@@ -10,8 +10,7 @@ public class Main {
         List<String> list2 = Arrays.asList("Pavel", "Mikhail", "Zack", "Lina", "Alex", "Nika");
 
         System.out.println(se.getOddIndexOfNames(list1));
-        System.out.println(se.getSortedNumbers(new String[]{"1, 2, 0", "4, 5"}));
-        System.out.println(se.getSortedNumbers(new String[]{"0.6, 2.2, 0", "4.3, -5.2"}));
+        System.out.println(se.getSortedNumbers(new String[]{"11, 22, 0", "4, 5"}));
         //se.infinityStream(25214903917l, 11, (long) Math.pow(2, 48), 1).forEach(System.out::println);
         System.out.println(se.zip(list1.stream(), list2.stream()).collect(Collectors.joining(", ")));
     }
